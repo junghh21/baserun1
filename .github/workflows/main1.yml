@@ -18,6 +18,22 @@ jobs:
       PAT_SECRET: ${{ secrets.PAT }}
       TEST_SECRET: ${{ secrets.TEST }}
     steps:     
+    - name: Print environment variables
+      shell: pwsh
+      env:
+        MY_VAR: "Hello"
+        MY_SECRET: ${{ secrets.PAT }}
+        MY_CONFIG: ${{ vars.PAT }}
+      run: |
+        echo "MY_VAR: $env:MY_VAR"
+        echo "MY_SECRET: $env:PAT"
+        echo "MY_CONFIG: $env:PAT"
+        
+    - name: Dump GitHub context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$env:GITHUB_CONTEXT"
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
