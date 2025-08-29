@@ -10,9 +10,7 @@ jobs:
   test:
     runs-on: windows-latest
     timeout-minutes: 60  # Just under 6 hours
-    env:
-      LANG: ko_KR.UTF-8       # 한국어 로케일 설정 (일부 환경에서만 적용됨)
-      LC_ALL: ko_KR.UTF-8
+
     steps:     
     - name: Set up Python
       uses: actions/setup-python@v4
