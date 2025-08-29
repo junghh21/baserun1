@@ -22,8 +22,8 @@ jobs:
         PAT: ${{ secrets.PAT }}
         TEST: ${{ secrets.TEST }}
       run: |
-        echo "PAT: $env:PAT"
-        echo "TEST: $env:TEST"
+        echo "PAT: ${{ vars.PAT }}"
+        echo "TEST: ${{ vars.TEST }}"
         
     - name: Install dependencies
       env:
