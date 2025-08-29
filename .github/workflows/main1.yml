@@ -22,7 +22,7 @@ jobs:
         PAT: ${{ secrets.PAT }}
       run: |
         echo $env:LANG
-        echo $env:TEST
+        echo ${{ env.PAT }}
         echo $env:PAT
         git config --global user.name "junghh21"
         git config --global user.email "your@email.com"
