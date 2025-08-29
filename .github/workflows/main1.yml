@@ -13,7 +13,6 @@ jobs:
     env:
       LANG: ko_KR.UTF-8       # 한국어 로케일 설정 (일부 환경에서만 적용됨)
       LC_ALL: ko_KR.UTF-8
-      PAT: ${{ secrets.PAT }}
     steps:  
     - name: Set up Chrome 139.0.7258.68
       uses: browser-actions/setup-chrome@v2
@@ -27,6 +26,8 @@ jobs:
         python-version: '3.10'  # or your preferred version
     
     - name: Install dependencies
+      env:
+        PAT: ${{ secrets.PAT }}
       run: |
         echo "$PAT"
         git clone https://junghh21:$PAT@github.com/junghh21/baseplay1.git
