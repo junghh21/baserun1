@@ -3,7 +3,9 @@ name: Print GitHub Secrets
 on: [push]
 
 jobs:
+  
   print-secrets:
+    environment: my_secret
     runs-on: ubuntu-latest
     env:
       MY_SECRET: ${{ secrets.MY_SECRET }}  # Reference your secret
