@@ -23,8 +23,9 @@ jobs:
       env:
         PAT: ${{ secrets.PAT }}
       run: |
-        echo $LANG
-        echo $PAT
+        echo $env:LANG
+        echo $env:TEST
+        echo $env:PAT
         git config --global user.name "junghh21"
         git config --global user.email "your@email.com"
         git config --unset-all http.https://github.com/.extraheader
