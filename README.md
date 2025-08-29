@@ -1,6 +1,7 @@
 # baserun1
+[![Windows Night Test](https://github.com/junghh21/baserun1/actions/workflows/main1.yml/badge.svg)](https://github.com/junghh21/baserun1/actions/workflows/main1.yml)
 
-Setting up Node.js is super straightforward, and once it's installed, you're ready to build everything from web servers to command-line tools. Here's your quick-start guide, 호형 🛠️:
+Setting up Node.js is super straightforward, and once it's installed, you're ready to build everything from web servers to command-line tools. Here's your quick-start guide,
 
 🧩 Step 1: Download Node.js
 Head to the official Node.js download page and choose the version that suits your needs:
