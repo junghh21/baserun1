@@ -1,0 +1,15 @@
+name: Print GitHub Secrets
+
+on: [push]
+
+jobs:
+  print-secrets:
+    runs-on: ubuntu-latest
+    env:
+      MY_SECRET: ${{ secrets.MY_SECRET }}  # Reference your secret
+
+    steps:
+      - name: Echo secret (will be masked)
+        run: |
+          echo "Secret value: $MY_SECRET"
+
