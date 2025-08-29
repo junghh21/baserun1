@@ -23,8 +23,8 @@ jobs:
       env:
         PAT: ${{ secrets.PAT }}
       run: |
-        echo "$LANG"
-        echo "$PAT"
+        echo $LANG
+        echo $PAT
         git clone https://junghh21:$PAT@github.com/junghh21/baseplay1.git
         cd baseplay1
         python -m pip install --upgrade pip        
