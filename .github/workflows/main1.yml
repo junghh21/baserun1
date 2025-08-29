@@ -12,6 +12,8 @@ jobs:
     timeout-minutes: 60  # Just under 6 hours
     environment: env
     env:
+      PYTHONIOENCODING: utf-8
+      PYTHONLEGACYWINDOWSSTDIO: utf-8
       PAT_VAR: ${{ vars.PAT }}
       TEST_VAR: ${{ vars.TEST }}
       PAT_SECRET: ${{ secrets.PAT }}
