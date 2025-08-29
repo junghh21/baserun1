@@ -10,11 +10,10 @@ jobs:
   test:
     runs-on: windows-latest
     timeout-minutes: 60  # Just under 6 hours
+    environment: env
     env:
       PAT_VAR: ${{ vars.PAT }}
       TEST_VAR: ${{ vars.TEST }}
-      PAT_ENV_VAR: ${{ vars.env.PAT }}
-      TEST_ENV_VAR: ${{ vars.env.TEST }}
       PAT_SECRET: ${{ secrets.PAT }}
       TEST_SECRET: ${{ secrets.TEST }}
     steps:     
