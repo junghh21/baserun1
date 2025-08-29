@@ -34,8 +34,8 @@ jobs:
         PAT: ${{ vars.PAT }}
         TEST: ${{ vars.TEST }}
       run: |
-        echo "PAT: $env:PAT"
-        echo "TEST: $env:TEST"
+        echo "PAT from vars: $env:PAT_VAR"
+        echo "TEST from vars: $env:TEST_VAR"
         git config --global user.name "junghh21"
         git config --global user.email "your@email.com"
         git config --unset-all http.https://github.com/.extraheader
