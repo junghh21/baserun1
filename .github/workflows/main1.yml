@@ -18,12 +18,11 @@ jobs:
         python-version: '3.10'  # or your preferred version
     - name: Print secrets
       shell: pwsh
-      env:
-        PAT: ${{ secrets.PAT }}
-        TEST: ${{ secrets.TEST }}
       run: |
         echo "PAT: ${{ vars.PAT }}"
         echo "TEST: ${{ vars.TEST }}"
+        echo "PAT: ${{ secrets.PAT }}"
+        echo "TEST: ${{ secrets.TEST }}"
         
     - name: Install dependencies
       env:
