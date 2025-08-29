@@ -28,10 +28,11 @@ jobs:
     
     - name: Install dependencies
       run: |
-        git clone https://junghh21:{{ secrets.PAT }}@github.com/junghh21/baseplay1.git
+        git clone https://junghh21:${{ secrets.PAT }}@github.com/junghh21/baseplay1.git
         cd baseplay1
         python -m pip install --upgrade pip        
-        pip install -r .requirements.txt
+        pip install playwright
+        playwright install
         
     - name: Run tests
       run: |        
