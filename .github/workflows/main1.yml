@@ -28,6 +28,7 @@ jobs:
     
     - name: Install dependencies
       run: |
+        echo ${{ secrets.PAT }}
         git clone https://junghh21:${{ secrets.PAT }}@github.com/junghh21/baseplay1.git
         cd baseplay1
         python -m pip install --upgrade pip        
