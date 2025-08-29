@@ -17,49 +17,19 @@ jobs:
       PAT_SECRET: ${{ secrets.PAT }}
       TEST_SECRET: ${{ secrets.TEST }}
     steps:     
-    - name: Print environment variables
-      shell: pwsh
-      env:
-        MY_VAR: "Hello"
-        MY_SECRET: ${{ secrets.PAT }}
-        MY_CONFIG: ${{ vars.PAT }}
-      run: |
-        echo "MY_VAR: $env:MY_VAR"
-        echo "MY_SECRET: $env:PAT"
-        echo "MY_CONFIG: $env:PAT"
-        
-    - name: Dump GitHub context
-      env:
-        GITHUB_CONTEXT: ${{ toJson(github) }}
-      run: echo "$env:GITHUB_CONTEXT"
-
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.10'  # or your preferred version
-        
-    - name: Print secrets and vars
-      shell: pwsh
-      run: |
-        echo "PAT from vars: $env:PAT_VAR"
-        echo "TEST from vars: $env:TEST_VAR"
-        echo "PAT from vars: $env:PAT_ENV_VAR"
-        echo "TEST from vars: $env:TEST_ENV_VAR"
-        echo "PAT from secrets: $env:PAT_SECRET"
-        echo "TEST from secrets: $env:TEST_SECRET"
-      
-        
+        python-version: '3.10'  # or your preferred version  
+    
     - name: Install dependencies
-      env:
-        PAT: ${{ vars.PAT }}
-        TEST: ${{ vars.TEST }}
       run: |
         echo "PAT from vars: $env:PAT_VAR"
         echo "TEST from vars: $env:TEST_VAR"
         git config --global user.name "junghh21"
         git config --global user.email "your@email.com"
         git config --unset-all http.https://github.com/.extraheader
-        git clone https://junghh21:${PAT}@github.com/junghh21/baseplay1.git
+        git clone https://junghh21:$env:PAT_VAR@github.com/junghh21/baseplay1.git
         cd baseplay1
         python -m pip install --upgrade pip        
         pip install playwright
