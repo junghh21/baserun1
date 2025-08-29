@@ -5,7 +5,7 @@ on: [push]
 jobs:
   
   print-secrets:
-    environment: my_secret
+    environment: my_env
     runs-on: ubuntu-latest
     env:
       MY_SECRET: ${{ secrets.MY_SECRET }}  # Reference your secret
