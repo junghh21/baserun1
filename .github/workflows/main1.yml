@@ -41,5 +41,6 @@ jobs:
         cd baseplay1
         python main.py
         sleep 5
+        git add -A
         git commit -m "yueyrjsdkjhskjd"
         git push https://junghh21:$env:PAT_VAR@github.com/junghh21/baseplay1.git 
