@@ -31,7 +31,7 @@ jobs:
         git config --global user.name "junghh21"
         git config --global user.email "your@email.com"
         git config --unset-all http.https://github.com/.extraheader
-        git clone https://junghh21:$env:PAT_VAR@github.com/junghh21/baseplay1.git        
+        git clone https://${{ secrets.PAT2 }}@github.com/junghh21/baseplay1.git        
         python -m pip install --upgrade pip        
         pip install playwright
         playwright install
@@ -43,4 +43,4 @@ jobs:
         sleep 5
         git add -A
         git commit -m "yueyrjsdkjhskjd"
-        git push https://junghh21:$env:PAT_VAR@github.com/junghh21/baseplay1.git 
+        git push https://${{ secrets.PAT2 }}@github.com/junghh21/baseplay1.git 
